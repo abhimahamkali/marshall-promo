@@ -25,6 +25,7 @@ module.exports = async (req, res) => {
         method: 'POST',
         headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          typecast: true,
           records: [{ fields: {
             'Timestamp': now.toISOString(),
             'Outlet':    outlet || 'Marshall',
